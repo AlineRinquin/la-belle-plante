@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as _ from 'underscore'
-import { list_products } from '../../data'
+import * as _ from 'underscore';
+import { list_products } from '../../data';
 
 @Component({
   selector: 'app-page-accueil',
@@ -9,11 +9,18 @@ import { list_products } from '../../data'
 })
 export class PageAccueilComponent implements OnInit {
 
+  listData = list_products;
+  public listcategorieFilter!: String[];
   constructor() { }
 
   ngOnInit(): void {
-   // let categorie = _.filter([list_products], function(product_breadcrumb_label){ return product_breadcrumb_label });
+ 
 
-    //console.log(categorie);
+  const listAllCategories = this.listData.map(product => product.product_breadcrumb_label);
+  //console.log(listAllCategories);
+  const listUniqCategories =_.uniq(listAllCategories);
+  console.log(listUniqCategories);
+  this.listcategorieFilter = listUniqCategories;
+
     }
 }
