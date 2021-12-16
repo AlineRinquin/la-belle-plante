@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'underscore';
-import { list_products } from '../../data';
+//import { list_products } from '../../data';
+import {DataService} from '../../services/data.service'
+
 
 @Component({
   selector: 'app-page-accueil',
@@ -9,18 +11,22 @@ import { list_products } from '../../data';
 })
 export class PageAccueilComponent implements OnInit {
 
-  listData = list_products;
+  listData : any[];
+  public datas!: any [];
   public listcategorieFilter!: String[];
-  constructor() { }
+
+
+  constructor(private dataService : DataService) { 
+    this.listData = []
+  }
 
   ngOnInit(): void {
- 
-
-  const listAllCategories = this.listData.map(product => product.product_breadcrumb_label);
-  //console.log(listAllCategories);
-  const listUniqCategories =_.uniq(listAllCategories);
-  console.log(listUniqCategories);
-  this.listcategorieFilter = listUniqCategories;
-
+  this.dataService.getDataproducts().subscribe((data:any)=>{
+    this.datas=data;
+    console.log(data);
+    this.listcategorieFilter = _.uniq( this.datas.map(product => product.product_breadcrumb_label));
+  console.log(this.listcategorieFilter);
+  
+  })
     }
 }

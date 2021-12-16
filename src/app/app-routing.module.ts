@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 import { PageDetailsComponent } from './pages/page-details/page-details.component';
 import { PagenotfoundComponent } from 
-    './pagenotfound/pagenotfound.component';
+  './pagenotfound/pagenotfound.component';
+
 
 const routes: Routes = [
   {path:'' , redirectTo:'home', pathMatch:'full'},
