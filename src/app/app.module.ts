@@ -9,6 +9,7 @@ import { PageDetailsComponent } from './pages/page-details/page-details.componen
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FilterSideBarComponent } from './components/filter-side-bar/filter-side-bar.component';
+import { CardPlantesComponent } from './components/card-plantes/card-plantes.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilterSideBarComponent } from './components/filter-side-bar/filter-side
     PageDetailsComponent,
     PageNotFoundComponent,
     PagenotfoundComponent,
-    FilterSideBarComponent
+    FilterSideBarComponent,
+    CardPlantesComponent
   ],
   imports: [
     BrowserModule,
