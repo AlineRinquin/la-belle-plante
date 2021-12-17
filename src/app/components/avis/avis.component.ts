@@ -29,4 +29,22 @@ export class AvisComponent implements OnInit {
       this.starArray[index]="star"
     }
   }
+  
+  //*******************************Correction jérémy************************************
+
+  //onMouseOver(index: number) {
+  //  console.log("star over", index);
+  //  for (let i = 0; i < this.starState.length ; i++) {
+  //    if(i <= index) {
+  //      this.starState[i] = 'star-fill';
+  //    } else {
+  //      this.starState[i] = 'star';
+  //    }
+  //  }
+  //}
+
+  //onMouseLeave() {
+  // this.starState = ['star', 'star', 'star', 'star', 'star'];
+  //  this.starState = this.starState.map(x => x = 'star');
+  //}
 }
