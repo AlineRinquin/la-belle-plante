@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import * as _ from 'underscore';
 
 @Component({
@@ -9,9 +9,19 @@ import * as _ from 'underscore';
 export class CardPlantesComponent implements OnInit {
 
 @Input() plant : any;
-  constructor() { }
+@Output() clickLike = new EventEmitter();
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
     
   }
+
+  onClickLike() {
+    console.log('click');
+    this.clickLike.emit();
+  }
 }
+
+

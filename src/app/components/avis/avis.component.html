@@ -1,0 +1,8 @@
+<div class="d-flex flex-row ">
+    <app-icon *ngFor="let star of starArray; let i = index" class="avis" 
+            [iconName]="star" 
+            [iconColor]="'#ebdf0c'" 
+            (mouseover)="onMouseOverStar(i)"
+            (mouseleave)="onMouseOverStarLeave(i)">
+    </app-icon>
+</div>

@@ -29,4 +29,10 @@ export class PageAccueilComponent implements OnInit {
   
   })
     }
+
+
+  onEventLike() {
+    this.dataService.plantLiked$.next('')
+  }
+  
 }

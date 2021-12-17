@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  likeCounter: number;
+  
+  constructor(private dataService : DataService) {
+    this.likeCounter = 0;
+   }
 
   ngOnInit(): void {
+    this.dataService.plantLiked$.subscribe(
+      () => {
+        console.log('Get new event from Subject')
+        this.likeCounter ++;
+      }
+    )
   }
 
 }

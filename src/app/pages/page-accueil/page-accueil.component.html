@@ -4,13 +4,7 @@
 
 
     <div class="custom-main container p-3">
-        <app-icon [iconName]="'heart'"
-        [iconSize]="2"></app-icon>
-                <app-icon [iconName]="'alarm'"
-                        [iconColor]="'red'"></app-icon>
-                <app-icon [iconName]="'star'"
-                        [iconSize]="3"
-                        [iconColor]="'orange'"></app-icon>
+        
         <input class="form-control" 
         type="text"
         placeholder="Recherche ta belle plante"
@@ -25,7 +19,9 @@
 
         <div class="row">
             <div class="col" *ngFor="let data of datas ">
-            <app-card-plantes [plant] = "data"></app-card-plantes>
+            <app-card-plantes [plant] = "data" 
+                            (clickLike)="onEventLike()">
+            </app-card-plantes>
             </div>
         </div>
 
